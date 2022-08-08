@@ -7,8 +7,9 @@ require("dotenv").config();
 const songs = require("./routes/songs");
 
 // middleware
-app.use("/api/songs/", songs);
+
 app.use(bodyParser.json());
+app.use("/api/songs/", songs);
 // routes
 app.get("/", (req, res) => {
   res.send("Root page");
