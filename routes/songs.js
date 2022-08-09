@@ -8,6 +8,7 @@ router.route("/").get(songControls.getAllSongs).post(songControls.postOneSong);
 router
   .route("/:id")
   .get(songControls.getOneSong)
+  .patch(songControls.patchOneSong)
   .delete(songControls.deleteOneSong);
 
 module.exports = router;
