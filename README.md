@@ -6,3 +6,4 @@ Server backend for songsCRUD Application
 - Express JS
 - Mongoose [**MongoDB Database**]
 
+[Has .env file for dev environment]
