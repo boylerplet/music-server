@@ -7,9 +7,11 @@ const bodyParser = require("body-parser");
 const connectDB = require("./database/connect");
 require("dotenv").config();
 const songs = require("./routes/songs");
+const artists = require("./routes/artists");
 // middleware
 app.use(bodyParser.json());
 app.use("/api/songs/", songs);
+app.use("/api/artists/", artists);
 // routes
 app.get("/", (req, res) => {
   res.send("Root page");
