@@ -3,7 +3,7 @@ const Songs = require("../models/songs");
 const getAllSongs = async (req, res) => {
   try {
     const songs = await Songs.find({});
-    res.status(200).json(songs);
+    res.status(200).json({ songs });
   } catch (error) {
     console.error(error);
     res.status(500).json({ msg: error });
@@ -13,7 +13,7 @@ const getAllSongs = async (req, res) => {
 const postOneSong = async (req, res) => {
   try {
     const song = await Songs.create(req.body);
-    res.status(201).json(song);
+    res.status(201).json({ song });
   } catch (error) {
     console.error(error);
     res.status(500).json({ msg: error });
@@ -27,7 +27,7 @@ const getOneSong = async (req, res) => {
     if (!song) {
       return res.status(404).send({ msg: `No song with ID: ${songID}` });
     }
-    res.status(200).json(song);
+    res.status(200).json({ song });
   } catch (error) {
     console.error(error);
     res.status(500).json({ msg: error });
@@ -62,7 +62,7 @@ const patchOneSong = async (req, res) => {
     if (!song) {
       return res.status(404).send({ msg: `No song with ID: ${songID}` });
     }
-    res.status(200).json(song);
+    res.status(200).json({ song });
   } catch (error) {
     console.log(error);
     res.status(500).json({ msg: error });

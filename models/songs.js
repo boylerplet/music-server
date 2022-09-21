@@ -32,6 +32,7 @@ const SongSchema = new mongoose.Schema({
     list: {
       type: [String],
       default: [
+        "None",
         "Electronic Dance Music",
         "Rock",
         "Jazz",
